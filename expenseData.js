@@ -3,7 +3,7 @@ export const daysOfWeek = [
 ]
 
 export const incomeSummaryData = [
-    30, 50, 90, 50, 10, 30, 40
+    30, 50, 90, 90, 10, 30, 40
 ]
 
 export const expenseSummaryData = [
