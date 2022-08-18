@@ -1,2 +1,2 @@
-# IncomeExpenseTrackerStatic
+# IncomeExpenseTrackerJS
 Vanilla html/css js (static) version
