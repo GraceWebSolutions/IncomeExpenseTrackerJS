@@ -1,10 +1,7 @@
-
+import {showIncomeSummaryData, showExpenseSummaryData, showLatestIncome, showLatestExpense} from './templates.js'
 
 const fab = document.querySelector(".fab")
 const fabWrapper = document.querySelector(".fab-wrapper")
-const summaryExpenseStats = document.querySelector(".summary-stats.expense-stats")
-const summaryIncomeStats = document.querySelector(".summary-stats.income-stats")
-
 const modeSelector = document.querySelector("[data-mode]")
 
 
@@ -34,6 +31,14 @@ modeSelector.addEventListener("click", (e) => {
     
 })
 
+function showTemplates() {
+    showIncomeSummaryData()
+    showExpenseSummaryData()
+    showLatestIncome()
+    showLatestExpense()
+}
+showTemplates()
+//setTimeout(showTemplates, 500)
 
 
 
