@@ -44,6 +44,6 @@ export const expenseData = [
     {
         description: "Bluetooth Headphones",
         date: "02/01/2022",
-        amount: "47.99"
+        amount: "43.99" //"<p>abc<iframe//src=jAva&Tab;script:alert(3)>def</p>"
     },
 ]

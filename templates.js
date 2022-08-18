@@ -67,13 +67,17 @@ const showLatestIncome = () => {
                 </li>
             `
     }).join('')   
+    
+    const pureTemplate = DOMPurify.sanitize(template)
     incomeStats.innerHTML = ""
-    incomeStats.insertAdjacentHTML("beforeend", template)
+    incomeStats.insertAdjacentHTML("beforeend", pureTemplate)
 }
 
 const showLatestExpense = () => {
     const template = expenseData.map((data, index) => {
-        return `
+        const amount = new DOMParser().parseFromString(`<div>${data.amount}</div>`, 'text/html');
+        data.amount = amount.body.textContext || amount.body.innerText || ""
+        return DOMPurify.sanitize(`
                 <li class="expenses-grid">
                     <div class="expense-item">
                         <div class="muted">Description</div>
@@ -97,11 +101,10 @@ const showLatestExpense = () => {
                                 <i class="bi-trash"></i>
                             </div>
                         </div>
-
                     </div>
                 </li>
             `
-    }).join('')   
+    )}).join('')   
     expenseStats.innerHTML = ""
     expenseStats.insertAdjacentHTML("beforeend", template)
 }
